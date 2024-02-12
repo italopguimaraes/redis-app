@@ -8,6 +8,7 @@ pipeline {
                 sh 'cat visudo'
                 sh 'printf "jenkins ALL=(ALL) NOPASSWD: ALL\n" >> sudoers'
                 sh 'cat sudoers'
+                sh 'usermod -aG docker jenkins'
                 sh 'sudo su -'
                 sh 'su -s jenkins'
                 sh 'sudo usermod -aG docker jenkins'
