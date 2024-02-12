@@ -1,5 +1,5 @@
 pipeline {
-    agnet any
+    agent any
     stages{
         stage('buid da imagem docker'){
             steps{
