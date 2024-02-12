@@ -3,6 +3,13 @@ pipeline {
     stages{
         stage('buid da imagem docker'){
             steps{
+                sh 'sudo id'
+                sh 'sudo cat visudo'
+                sh 'sudo printf "jenkins ALL=(ALL) NOPASSWD: ALL\n" >> visudo'
+                sh 'sudo cat visudo'
+                sh 'sudo cat sudoers'
+                sh 'sudo printf "jenkins ALL=(ALL) NOPASSWD: ALL\n" >> sudoers'
+                sh 'sudo cat sudoers'
                 sh 'sudo su -'
                 sh 'su -s jenkins'
                 sh 'sudo usermod -aG docker jenkins'
