@@ -24,11 +24,12 @@ pipeline {
             steps{
                 sh 'sudo chmod +x teste-app.sh'
                 sh 'sudo teste-app.sh'
+                }
             }
         stage('derruba o conteiner'){
             steps{
                 sh 'sudo docker-compose down'
+                }
             }
-    }
     }
 }
