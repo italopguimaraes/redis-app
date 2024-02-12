@@ -4,13 +4,11 @@ pipeline {
         stage('buid da imagem docker'){
             steps{
                 sh 'id'
-                sh 'printf "jenkins ALL=(ALL) NOPASSWD: ALL\n" >> visudo'
                 sh 'cat visudo'
-                sh 'printf "jenkins ALL=(ALL) NOPASSWD: ALL\n" >> sudoers'
                 sh 'cat sudoers'
                 sh 'sudo su -'
-                sh 'su -s jenkins'
                 sh 'sudo usermod -aG docker jenkins'
+                sh 'su -s jenkins'
                 sh 'sudo docker build -t devops/app .'
             }
         }
