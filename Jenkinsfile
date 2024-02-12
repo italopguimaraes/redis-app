@@ -3,7 +3,6 @@ pipeline {
     stages{
         stage('buid da imagem docker'){
             steps{
-                sh 'groupadd docker'
                 sh 'usermod -aG docker italopguimaraes'
                 sh 'su -s italopguimaraes'
                 sh 'docker build -t devops/app .'
