@@ -2,7 +2,7 @@ pipeline {
     agnet any
     stages{
         stage('buid da imagem docker'){
-            steps{]
+            steps{
                 sh 'docker build -t devops/app .'
             }
         }
@@ -18,6 +18,7 @@ pipeline {
         }
         stage('teste de aplicação'){
             steps{
+                sh 'chmod +x teste-app.sh'
                 sh 'teste-app.sh'
             }
     }
