@@ -3,8 +3,9 @@ pipeline {
     stages{
         stage('buid da imagem docker'){
             steps{
-                sh 'usermod -aG docker jenkins'
+                sh 'sudo docker-compose up --buid -d'
                 sh 'sudo su -'
+                sh 'sudo usermod -aG docker jenkins'
                 sh 'su -s jenkins'
                 sh 'docker build -t devops/app .'
             }
