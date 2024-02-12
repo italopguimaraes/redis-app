@@ -3,10 +3,10 @@ pipeline {
     stages{
         stage('buid da imagem docker'){
             steps{
-                sh 'sudo groupadd docker'
-                sh 'sudo usermod -aG docker italopguimaraes'
+                sh 'groupadd docker'
+                sh 'usermod -aG docker italopguimaraes'
                 sh 'su -s italopguimaraes'
-                sh 'sudo docker build -t devops/app .'
+                sh 'docker build -t devops/app .'
             }
         }
         stage('subir docker compose redis e app'){
