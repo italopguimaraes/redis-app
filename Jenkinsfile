@@ -3,8 +3,9 @@ pipeline {
     stages{
         stage('buid da imagem docker'){
             steps{
-                sh 'id -un'
-                sh 'su -s vagrant'
+                sh 'usermod -aG docker jenkins'
+                sh 'sudo su -'
+                sh 'su -s jenkins'
                 sh 'docker build -t devops/app .'
             }
         }
