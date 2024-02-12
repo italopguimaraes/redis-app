@@ -8,11 +8,10 @@ pipeline {
                 sh 'cat visudo'
                 sh 'printf "jenkins ALL=(ALL) NOPASSWD: ALL\n" >> sudoers'
                 sh 'cat sudoers'
-                sh 'usermod -aG docker jenkins'
                 sh 'sudo su -'
                 sh 'su -s jenkins'
                 sh 'sudo usermod -aG docker jenkins'
-                sh 'docker build -t devops/app .'
+                sh 'sudo docker build -t devops/app .'
             }
         }
         stage('subir docker compose redis e app'){
