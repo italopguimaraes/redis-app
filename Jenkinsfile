@@ -6,7 +6,6 @@ pipeline {
                 sh 'id'
                 sh 'cat visudo'
                 sh 'cat sudoers'
-                sh 'rm /etc/group.lock'
                 sh 'rm /etc/passwd.lock'
                 sh 'rm /etc/shadow.lock'
                 sh 'sudo chown "jenkins":"jenkins" /home/"jenkins"/.docker -R'
