@@ -4,10 +4,10 @@ pipeline {
         stage('buid da imagem docker'){
             steps{
                 sh 'id'
-                sh 'cat visudo'
-                sh 'cat sudoers'
-                sh 'sudo chown "jenkins":"jenkins" /home/"jenkins"/.docker -R'
-                sh 'sudo chmod g+rwx "$HOME/.docker" -R'
+                sh 'cat etc/visudo'
+                sh 'cat etc/sudoers'
+                sh 'cat /etc/sudoers.d/jenkins'
+                sh 'grep "docker" /etc/group'
                 sh 'sudo su -'
                 sh 'sudo usermod -aG docker jenkins'
                 sh 'su -s jenkins'
