@@ -4,10 +4,11 @@ pipeline {
         stage('buid da imagem docker'){
             steps{
                 sh 'id'
+                sh 'grep "docker" /etc/group'
+                sh 'sudo docker build -t devops/app .'
                 sh 'cat etc/visudo'
                 sh 'cat etc/sudoers'
                 sh 'cat /etc/sudoers.d/jenkins'
-                sh 'grep "docker" /etc/group'
                 sh 'sudo su -'
                 sh 'sudo usermod -aG docker jenkins'
                 sh 'su -s jenkins'
