@@ -20,6 +20,8 @@ pipeline {
         stage('teste de aplicação'){
             steps{
                 sh 'chmod +x teste-app.sh'
+                sh 'sh jenkins'
+                su 'echo Macaco87@'
                 sh 'sudo ./teste-app.sh'
                 }
             }
