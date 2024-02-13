@@ -22,10 +22,5 @@ pipeline {
                 sh './teste-app.sh'
                 }
             }
-        stage('derruba o conteiner'){
-            steps{
-                sh 'docker-compose down'
-                }
-            }
     }
 }
