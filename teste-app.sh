@@ -1,5 +1,8 @@
 #/bin/bash
 RESULT="'wget -q0- http://localhost:8090'"
+echo 'RESULT:'
+echo $RESULT
+sudo yum install -y wget
 wget -q localhost:8090
 if [ $? -eq 0 ]
 then
