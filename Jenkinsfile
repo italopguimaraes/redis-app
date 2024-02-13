@@ -19,7 +19,7 @@ pipeline {
         stage('teste de aplicação'){
             steps{
                 sh 'chmod +x teste-app.sh'
-                sh 'sudo ./teste-app.sh'
+                sh './teste-app.sh'
                 }
             }
         stage('derruba o conteiner'){
