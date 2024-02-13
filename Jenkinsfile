@@ -5,7 +5,7 @@ pipeline {
             steps{
                 sh 'id'
                 sh 'grep "docker" /etc/group'
-                sh 'sudo docker build -t devops/app .'
+                sh 'docker build -t devops/app .'
                 sh 'cat etc/visudo'
                 sh 'cat etc/sudoers'
                 sh 'cat /etc/sudoers.d/jenkins'
