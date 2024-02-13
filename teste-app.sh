@@ -1,5 +1,6 @@
 #/bin/bash
 sudo yum install -y wget
+sudo docker ps -a
 RESULT="'wget -qO- http://localhost:8090'"
 echo 'RESULT:'
 echo $RESULT

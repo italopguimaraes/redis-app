@@ -9,6 +9,7 @@ pipeline {
         stage('subir docker compose redis e app'){
             steps{
                 sh 'docker-compose up -d'
+                sh 'docker ps -a'
             }
         }
         stage('sleep para subida de containers'){
