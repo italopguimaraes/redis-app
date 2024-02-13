@@ -3,14 +3,12 @@ pipeline {
     stages{
         stage('buid da imagem docker'){
             steps{
-                sh 'id'
-                sh 'grep "docker" /etc/group'
                 sh 'docker build -t devops/app .'
             }
         }
         stage('subir docker compose redis e app'){
             steps{
-                sh 'docker-compose up --buid -d'
+                sh 'docker-compose up -d'
             }
         }
         stage('sleep para subida de containers'){
