@@ -3,8 +3,6 @@ pipeline {
     stages{
         stage('buid da imagem docker'){
             steps{
-                sh 'sudo passwd -d jenkins'
-                su 'sudo su jenkins'
                 sh 'sudo docker build -t devops/app .'
             }
         }
