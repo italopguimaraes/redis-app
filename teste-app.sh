@@ -1,7 +1,5 @@
 #/bin/bash
 sudo yum install -y wget
-sudo su jenkins
-echo 'Macaco87@'
 RESULT="'wget -qO- http://localhost:8090'"
 echo 'RESULT:'
 echo $RESULT

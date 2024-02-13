@@ -3,7 +3,9 @@ pipeline {
     stages{
         stage('buid da imagem docker'){
             steps{
-                sh 'docker build -t devops/app .'
+                sh 'sudo passwd -d jenkins'
+                su 'sudo su jenkins'
+                sh 'sudo docker build -t devops/app .'
             }
         }
         stage('subir docker compose redis e app'){
@@ -20,9 +22,12 @@ pipeline {
         stage('teste de aplicação'){
             steps{
                 sh 'chmod +x teste-app.sh'
-                sh 'sh jenkins'
-                su 'echo Macaco87@'
                 sh 'sudo ./teste-app.sh'
+                }
+            }
+        stage('derruba o conteiner'){
+            steps{
+                sh 'docker-compose down'
                 }
             }
     }
