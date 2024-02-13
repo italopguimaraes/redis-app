@@ -1,6 +1,6 @@
 #/bin/bash
 sudo yum install -y wget
-RESULT="'wget -q0- http://localhost:8090'"
+RESULT="'wget -qO- http://localhost:8090'"
 echo 'RESULT:'
 echo $RESULT
 wget -q localhost:8090
