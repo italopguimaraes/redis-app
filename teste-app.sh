@@ -3,6 +3,7 @@ sudo yum install -y wget
 RESULT="'wget -qO- http://localhost:8090'"
 echo 'RESULT:'
 echo $RESULT
+echo '<-----'
 wget -q localhost:8090
 if [ $? -eq 0 ]
 then
